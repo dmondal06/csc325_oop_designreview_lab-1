@@ -18,7 +18,7 @@ public class Student extends Human {
      * @param name the name of the student
      * @param age  the age of the student
      */
-    public Student(String name, short age){
+    public Student(String name, short age, double GPA){
         super(name,age);
         this.GPA = GPA;
     }
@@ -60,6 +60,7 @@ public class Student extends Human {
     @Override
     public String toString() {
         return "Student: " + getName() + ", Age: "
-                + getAge() ;
+                + getAge() + ", GPA: " + getGPA();
     }
+
 }

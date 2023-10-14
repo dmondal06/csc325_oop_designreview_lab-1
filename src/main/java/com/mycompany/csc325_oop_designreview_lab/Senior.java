@@ -11,8 +11,8 @@ public class Senior extends Student{
      * @param age the age of the student
      * @param credits the credits of the student
      */
-    public Senior(String name, int age, int credits){
-        super(name, (short)age);
+    public Senior(String name, int age, double GPA,  int credits){
+        super(name, (short)age,GPA);
 
         //warning message if the credit for senior is below the min of 85
         if (credits < minCredits) {

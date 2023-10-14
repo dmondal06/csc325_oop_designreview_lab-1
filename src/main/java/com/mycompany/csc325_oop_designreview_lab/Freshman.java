@@ -8,8 +8,8 @@ public class Freshman extends Student {
      * @param age     Student's age.
      * @param credits Number of credits completed.
      */
-    public Freshman(String name, short age, int credits) {
-        super(name, (short)age);
+    public Freshman(String name, short age, double GPA,int credits) {
+        super(name, (short)age, GPA);
         this.credits = credits;
     }
 
@@ -38,6 +38,7 @@ public class Freshman extends Student {
     @Override
     public String toString() {
         return "Freshman: " + getName() + ", Age: "
-                + getAge() + ", Credits: " + credits ;
+                + getAge() + ", GPA: " + getGPA() + ", Credits: " + getCredits();
     }
+
 }

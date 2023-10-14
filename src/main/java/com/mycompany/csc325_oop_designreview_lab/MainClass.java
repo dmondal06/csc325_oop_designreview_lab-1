@@ -20,45 +20,36 @@ public class MainClass {
 	 *
 	 * @author Deepa Mondal
 	 */
- public static void main(String[] args) {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
 
+		// Input GPA for Student James
+		System.out.print("Enter GPA for Student James: ");
+		double jamesGPA = scanner.nextDouble();
+		Student std1 = new Student("James", (short) 20, jamesGPA);
+		System.out.println(std1);
 
-	 Student std1 = new Student("James", (short) 20);
-	 Freshman Freshman1 = new Freshman("Sarah", (short) 18, 12);
-	 Senior std2 = null;
+		// Input GPA for Freshman Sarah
+		System.out.print("Enter GPA for Freshman Sarah: ");
+		double sarahGPA = scanner.nextDouble();
+		Freshman Freshman1 = new Freshman("Sarah", (short) 18, sarahGPA, 12);
+		System.out.println(Freshman1);
 
-	 //scanner object to read in the gpa and credits for student
-	 Scanner scanner = new Scanner(System.in);
+		// Input GPA and credits for Senior John
+		try {
+			System.out.print("Enter GPA for Senior John: ");
+			double johnGPA = scanner.nextDouble();
+			System.out.print("Enter the number of credits for Senior John: ");
+			int johnCredits = scanner.nextInt();
+			Senior std2 = new Senior("John", (short) 22, johnGPA, johnCredits);
+			std2.setGPA(johnGPA);
+			System.out.println(std2);
+		} catch (IllegalArgumentException e) {
+			System.out.println("Error: " + e.getMessage());
+		}
 
-	 System.out.print("Enter GPA for Student James: ");
-	 double jamesGPA = scanner.nextDouble();
-	 std1.setGPA(jamesGPA);
-	 System.out.println(std1);
-
-	 System.out.print("Enter GPA for Freshman Sarah: ");
-	 double sarahGPA = scanner.nextDouble();
-	 Freshman1.setGPA(sarahGPA);
-	 System.out.println(Freshman1);
-
-	 try {
-		 System.out.print("Enter GPA for Senior John: ");
-		 double johnGPA = scanner.nextDouble();
-		 System.out.print("Enter the number of credits for Senior John: ");
-		 int johnCredits = scanner.nextInt();
-		std2 = new Senior("John", (short) 22, johnCredits);
-		 std2.setGPA(johnGPA);
-		 //throws an exception if the credits are less than 85 for a senior
-	 } catch (IllegalArgumentException e) {
-		 System.out.println("Error: " + e.getMessage());
-	 }
-
-	 if (std2 != null) {
-		 System.out.println(std2);
-	 }
-	 scanner.close();
-
-
- }
+		scanner.close();
+	}
 
 }
 
