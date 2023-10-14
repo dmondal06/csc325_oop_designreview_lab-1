@@ -37,17 +37,19 @@ public class MainClass {
 
 		// Input GPA and credits for Senior John
 		try {
-			System.out.print("Enter GPA for Senior John: ");
+			System.out.print("Enter the GPA for Senior John: ");
 			double johnGPA = scanner.nextDouble();
 			System.out.print("Enter the number of credits for Senior John: ");
 			int johnCredits = scanner.nextInt();
 			Senior std2 = new Senior("John", (short) 22, johnGPA, johnCredits);
 			std2.setGPA(johnGPA);
 			System.out.println(std2);
+
 		} catch (IllegalArgumentException e) {
 			System.out.println("Error: " + e.getMessage());
 		}
 
+		//closing the scanner
 		scanner.close();
 	}
 
