@@ -6,45 +6,59 @@ package com.mycompany.csc325_oop_designreview_lab;
 
 import java.util.Scanner;
 /**
+ * This is the main class for the OOP Design Review Lab.
+ * It demonstrates the creation of Student, Freshman, and Senior objects
+ * and allows input of GPA and credits for Senior students.
  *
  * @author Deepa Mondal
  */
 public class MainClass {
-
+	/**
+	 * This is the main class for the OOP Design Review Lab.
+	 * It demonstrates the creation of Student, Freshman, and Senior objects
+	 * and allows input of GPA and credits for Senior students.
+	 *
+	 * @author Deepa Mondal
+	 */
  public static void main(String[] args) {
-		// ToDo 5: Fix the error
 
-		// ToDo 6: Fix the constructor of the Student class
 
-                // Todo 7: Create two classes for Freshman and Senior 
+	 Student std1 = new Student("James", (short) 20);
+	 Freshman Freshman1 = new Freshman("Sarah", (short) 18, 12);
+	 Senior std2 = null;
 
-                // ToDo 8: The senior class should have a minimum of 85 credits  
+	 //scanner object to read in the gpa and credits for student
+	 Scanner scanner = new Scanner(System.in);
 
-		// ToDo 9: Add a toString method for the Student class
-		// ToDo 10: Add a toString method for the Freshman class
+	 System.out.print("Enter GPA for Student James: ");
+	 double jamesGPA = scanner.nextDouble();
+	 std1.setGPA(jamesGPA);
+	 System.out.println(std1);
 
-		Student std1= new Student("James", (short)20, 3.5);
-                // ToDo 11: Add a toString method for the Senior class
+	 System.out.print("Enter GPA for Freshman Sarah: ");
+	 double sarahGPA = scanner.nextDouble();
+	 Freshman1.setGPA(sarahGPA);
+	 System.out.println(Freshman1);
 
-		Freshman Freshman1= new Freshman("Sarah", (short)18, 12); // name, age, credits
+	 try {
+		 System.out.print("Enter GPA for Senior John: ");
+		 double johnGPA = scanner.nextDouble();
+		 System.out.print("Enter the number of credits for Senior John: ");
+		 int johnCredits = scanner.nextInt();
+		std2 = new Senior("John", (short) 22, johnCredits);
+		 std2.setGPA(johnGPA);
+		 //throws an exception if the credits are less than 85 for a senior
+	 } catch (IllegalArgumentException e) {
+		 System.out.println("Error: " + e.getMessage());
+	 }
 
-                Senior std2 = new Senior("John", (short)22, 90);
+	 if (std2 != null) {
+		 System.out.println(std2);
+	 }
+	 scanner.close();
 
-		// ToDo 12: Set the gpa of the student using the scanner and user
-		// 			input and then print the output.
-	 	Scanner scanner = new Scanner(System.in);
-	 	System.out.print("Enter GPA for James: ");
-		 double jamesGPA = scanner.nextDouble();
-		 std1.setGPA(jamesGPA);
-		 scanner.close();
-		System.out.println(std1);
-	 	System.out.println(Freshman1);
-		System.out.println(std2);
 
-		// ToDo 13: add comments and explain your code
-
-		// ToDo 14: submit using a pull request.
-	}
+ }
 
 }
 

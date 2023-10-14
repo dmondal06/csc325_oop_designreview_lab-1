@@ -4,20 +4,28 @@ public class Freshman extends Student {
     private int credits;
     /**
      * Parameterized Constructor for the freshman class
-     *
      * @param name    Student's name.
      * @param age     Student's age.
      * @param credits Number of credits completed.
      */
     public Freshman(String name, short age, int credits) {
-        super(name, age);
+        super(name, (short)age);
         this.credits = credits;
     }
 
+    /**
+     * This method retrieves the credit for the freshman
+     * @returns the credit
+     */
     public int getCredits() {
+
         return credits;
     }
 
+    /**
+     * This method sets the credits for the freshman
+     * @param credits of the freshman
+     */
     public void setCredits(int credits) {
         this.credits = credits;
     }
@@ -29,7 +37,7 @@ public class Freshman extends Student {
      */
     @Override
     public String toString() {
-        return "Freshman [Name: " + getName() + ", Age: "
-                + getAge() + ", Credits: " + credits + "]";
+        return "Freshman: " + getName() + ", Age: "
+                + getAge() + ", Credits: " + credits ;
     }
 }

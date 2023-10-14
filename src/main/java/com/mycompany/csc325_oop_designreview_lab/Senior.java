@@ -13,21 +13,34 @@ public class Senior extends Student{
      */
     public Senior(String name, int age, int credits){
         super(name, (short)age);
-        this.credits = credits;
+
         //warning message if the credit for senior is below the min of 85
-        if(credits < minCredits){
-            System.out.println("Warning: The student's credit is below the minimum of 85");
+        if (credits < minCredits) {
+            throw new IllegalArgumentException("The student's credit is below the minimum of 85");
         }
+        this.credits = credits;
     }
+
+    /**
+     * This method retrieves the credits for the senior class
+     * @return the credits
+     */
     public int getCredits() {
         return credits;
     }
 
+    /**
+     * This method sets the credits for the seniors
+     * @param credits of the seniors
+     */
     public void setCredits(int credits) {
         this.credits = credits;
     }
 
-
+    /**
+     * Returns a string representation of the Senior student, including name, age, credits, and GPA.
+     * @return a string with student information
+     */
     @Override
     public String toString() {
         return "Senior: " + getName() + ", age: " + getAge() +

@@ -6,7 +6,7 @@ package com.mycompany.csc325_oop_designreview_lab;
 
 /**
  *
- * @author MoaathAlrajab
+ * @author Deepa Mondal
  */
 public class Student extends Human {
 
@@ -15,16 +15,20 @@ public class Student extends Human {
     /**
      * Parameterized constructor for student class containing name
      * age and gpa as parameter
-     *
      * @param name the name of the student
      * @param age  the age of the student
      */
-    public Student(String name, short age, double GPA){
+    public Student(String name, short age){
         super(name,age);
         this.GPA = GPA;
     }
 
+    /**
+     * Get method student's GPA
+     * @return it returns the GPA of the student
+     */
     public double getGPA() {
+
         return GPA;
     }
     public void setGPA(double GPA){
@@ -37,6 +41,7 @@ public class Student extends Human {
      */
     @Override
     public String getAddress(){
+
         return "Student's Address";
     }
 
@@ -47,9 +52,14 @@ public class Student extends Human {
     public void setAddress(String address){
 
     }
-    // ToDo 2: Fix the resulting errors
 
-	// ToDo 3: Add a field for GPA and create a setter and a getter
-	
-	// ToDo 4: Add comments to your code
+    /**
+     * ToString override which overrides the tostring method implement by the object class
+     * and also formats the way student data is presented
+     */
+    @Override
+    public String toString() {
+        return "Student: " + getName() + ", Age: "
+                + getAge() ;
+    }
 }
